@@ -10,7 +10,8 @@ const programas = [
     { nombre: "Path My PC", enlace: "https://patchmypc.com/home-updater" },
     { nombre: "Revo", enlace: "https://www.mediafire.com/file/7rgsy504s2j0y1b/Revo+Uninstaller+Pro+4.4.5+FULL+2021.7z/file" },
     { nombre: "Picassa", enlace: "https://huggingface.co/spaces/rachez/Programs/resolve/main/picasa-3-9-141-259.exe" },
-    { nombre: "Ripcord", enlace: "https://linkfly.to/ripcordrachez" }
+    { nombre: "Ripcord", enlace: "https://linkfly.to/ripcordrachez" },
+    { nombre: "M3U8 Extension", enlace: "https://huggingface.co/spaces/rachez/Programs/resolve/main/M3U8%20Downloader.7z" }
 ];
 
 // Selecciona el elemento ul donde se mostrará la lista
