@@ -1,0 +1,341 @@
+<html><head><base href="https://websim.io/optijuegos-clone/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" sizes="192x192" href="https://i.ibb.co/6HTN9zK/image-3.png" type="image/x-icon">
+<link rel="shortcut icon" href="https://i.ibb.co/6HTN9zK/image-3.png" type="image/x-icon">
+<link rel="apple-touch-icon" href="https://i.ibb.co/6HTN9zK/image-3.png" type="image/x-icon">
+<title>RachezPrograms</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+h1 {
+    color: #ffffff;
+    text-align: center;
+    margin: 20px 0;
+}
+.program-container {
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+    padding: 20px;
+    width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+.program-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.program-item {
+    padding: 10px;
+    border-bottom: 1px solid #3a3a3a;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.program-item:last-child {
+    border-bottom: none;
+}
+.program-item:hover {
+    background-color: #3a3a3a;
+}
+.program-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.program-name {
+    font-weight: bold;
+    color: #ffffff;
+}
+.program-version {
+    font-size: 0.8em;
+    color: #b0b0b0;
+}
+.info-icon {
+    font-size: 1.2em;
+    color: #4CAF50;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+}
+.modal-content {
+    background-color: #2a2a2a;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #444;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 5px;
+    text-align: center;
+    color: #e0e0e0;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close:hover,
+.close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #0b003b;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.button:hover {
+    background-color: #190477;
+}
+
+.program-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.program-container::-webkit-scrollbar-track {
+    background: #2a2a2a;
+    border-radius: 10px;
+}
+
+.program-container::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 10px;
+}
+
+.program-container::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+</style>
+</head>
+<body>
+<h1>Programas</h1>
+<div class="program-container">
+    <ul class="program-list">
+        <li class="program-item" 
+            data-button1="Descargar" data-link1="https://www.speedguide.net/downloads.php"
+            data-button2="Tutorial" data-link2="https://www.youtube.com/watch?v=4qckoOaDhJM"
+            data-info="TCP Optimizer es una herramienta gratuita para optimizar la conexión de red en Windows, ajustando configuraciones TCP/IP para mejorar la velocidad.">
+            <div class="program-info">
+                <span class="program-name">Tcp Optimizer</span>
+                <span class="program-version"></span>
+            </div>
+            <span class="info-icon">?</span>
+        </li>
+        <li class="program-item"
+            data-button1="Descargar" data-link1="https://www.sordum.org/7952/dns-jumper-v2-3/"
+            data-info="DNS Jumper es una herramienta gratuita para cambiar servidores DNS en Windows, mejorando velocidad y privacidad.">
+            <div class="program-info">
+                <span class="program-name">Dns Jumper</span>
+                <span class="program-version"></span>
+            </div>
+            <span class="info-icon">?</span>
+        </li>
+        <li class="program-item"
+        data-button1="Descargar" data-link1="https://www.mediafire.com/file/tzlhto13s506e8y/NO_UPDATES.7z/file"
+        data-info="Windows Update Blocker es una herramienta gratuita que permite habilitar o deshabilitar fácilmente las actualizaciones automáticas de Windows.">
+        <div class="program-info">
+            <span class="program-name">Wub</span>
+            <span class="program-version"></span>
+        </div>
+        <span class="info-icon">?</span>
+    </li>
+    <li class="program-item"
+    data-button1="Descargar" data-link1="https://www.mediafire.com/file/8d45uqsype847if/HRC.7z/file"
+    data-info="Hotkey Resolution Changer es una herramienta gratuita que permite cambiar la resolución de pantalla rápidamente usando atajos de teclado.">
+    <div class="program-info">
+        <span class="program-name">HRC</span>
+        <span class="program-version"></span>
+    </div>
+    <span class="info-icon">?</span>
+</li>
+<li class="program-item"
+data-button1="Descargar" data-link1="https://cancel.fm/ripcord/"
+data-button2=".dll" data-link2="https://github.com/geniiii/ripcord-audio-hook"
+data-button3="Tutorial" data-link3="https://www.youtube.com/watch?v=Kl9EujaaWGs"
+data-info="Ripcord es una aplicación ligera para usar Discord y Slack en una interfaz simplificada y más eficiente.">
+<div class="program-info">
+    <span class="program-name">Ripcord</span>
+    <span class="program-version"></span>
+</div>
+<span class="info-icon">?</span>
+</li>
+<li class="program-item"
+data-button1="Descargar" data-link1="https://www.mediafire.com/file/h9z62hrtcez13ot/MSI_util_v3.exe/file"
+data-info="MSI Util v3 habilita el modo MSI en dispositivos de hardware para mejorar el rendimiento en Windows. Es útil para optimizar la gestión de interrupciones del sistema.">
+<div class="program-info">
+    <span class="program-name">Msi Util v3</span>
+    <span class="program-version"></span>
+</div>
+<span class="info-icon">?</span>
+</li>
+<li class="program-item"
+data-button1="Descargar" data-link1="https://eternallybored.org/misc/wget/"
+data-button2="Codigos" data-link2="https://pastebin.com/raw/eM7s42WE"
+data-info="Wget es una herramienta de línea de comandos para descargar archivos de internet, soportando transferencias HTTP, HTTPS y FTP. Es potente, flexible y permite descargas en segundo plano.">
+<div class="program-info">
+    <span class="program-name">Wget</span>
+    <span class="program-version"></span>
+</div>
+<span class="info-icon">?</span>
+</li>
+<li class="program-item"
+data-button1="Descargar" data-link1="https://huggingface.co/spaces/rachez/Programs/resolve/main/UltraISO%20v.9.6.rar"
+data-info="UltraISO es una herramienta para crear, editar y convertir archivos de imagen ISO, permitiendo gestionar fácilmente contenido de discos virtuales.">
+<div class="program-info">
+    <span class="program-name">Ultra Iso</span>
+    <span class="program-version"></span>
+</div>
+<span class="info-icon">?</span>
+</li>
+<li class="program-item"
+data-button1="Descargar" data-link1="https://patchmypc.com/home-updater"
+data-info="Patch My PC es una herramienta que actualiza automáticamente programas instalados en Windows, manteniéndolos al día con las últimas versiones.">
+<div class="program-info">
+    <span class="program-name">Path My PC</span>
+    <span class="program-version"></span>
+</div>
+<span class="info-icon">?</span>
+</li>
+<li class="program-item"
+data-button1="Descargar" data-link1="https://www.mediafire.com/file/7rgsy504s2j0y1b/Revo+Uninstaller+Pro+4.4.5+FULL+2021.7z/file"
+data-info="Revo Uninstaller es un programa que desinstala aplicaciones en Windows de manera completa, eliminando archivos residuales y entradas de registro.">
+<div class="program-info">
+    <span class="program-name">Revo</span>
+    <span class="program-version"></span>
+</div>
+<span class="info-icon">?</span>
+</li>
+<li class="program-item"
+data-button1="Descargar" data-link1="https://huggingface.co/spaces/rachez/Programs/resolve/main/picasa-3-9-141-259.exe"
+data-info="Picasa es un software de Google para organizar, editar y compartir fotos, ofreciendo herramientas sencillas para mejorar imágenes y crear álbumes.">
+<div class="program-info">
+    <span class="program-name">Picassa</span>
+    <span class="program-version"></span>
+</div>
+<span class="info-icon">?</span>
+</li>
+<li class="program-item"
+data-button1="Descargar" data-link1="https://huggingface.co/spaces/rachez/Programs/resolve/main/M3U8%20Downloader.7z"
+data-info="M3U8 Downloader es una herramienta que descarga y convierte videos en formato HLS (M3U8) a archivos de video estándar, facilitando el acceso offline.">
+<div class="program-info">
+    <span class="program-name">M3U8 Downloader</span>
+    <span class="program-version"></span>
+</div>
+<span class="info-icon">?</span>
+</li>
+        <!-- Add more program items here with similar data attributes -->
+    </ul>
+</div>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modal-title"></h2>
+        <p id="modal-info"></p>
+        <div class="button-container" id="button-container"></div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalInfo = document.getElementById('modal-info');
+    const buttonContainer = document.getElementById('button-container');
+    const closeButton = document.getElementsByClassName('close')[0];
+    const programItems = document.querySelectorAll('.program-item');
+
+    programItems.forEach(item => {
+        const infoIcon = item.querySelector('.info-icon');
+
+        infoIcon.addEventListener('click', (event) => {
+            event.stopPropagation();
+            const programName = item.querySelector('.program-name').textContent;
+            const programVersion = item.querySelector('.program-version').textContent;
+            const info = item.dataset.info;
+
+            modalTitle.textContent = `${programName} ${programVersion}`;
+            modalInfo.textContent = info;
+            buttonContainer.style.display = 'none';
+            modal.style.display = 'block';
+        });
+
+        item.addEventListener('click', (event) => {
+            if (event.target !== infoIcon) {
+                const programName = item.querySelector('.program-name').textContent;
+                const programVersion = item.querySelector('.program-version').textContent;
+                
+                modalTitle.textContent = `${programName} ${programVersion}`;
+                modalInfo.textContent = '';
+                buttonContainer.innerHTML = ''; // Clear previous buttons
+                buttonContainer.style.display = 'flex';
+                
+                // Create buttons dynamically
+                for (let i = 1; i <= 5; i++) {
+                    const buttonText = item.dataset[`button${i}`];
+                    const buttonLink = item.dataset[`link${i}`];
+                    
+                    if (buttonText && buttonLink) {
+                        const button = document.createElement('a');
+                        button.href = buttonLink;
+                        button.className = 'button';
+                        button.textContent = buttonText;
+                        button.target = '_blank';
+                        buttonContainer.appendChild(button);
+                    }
+                }
+                
+                modal.style.display = 'block';
+            }
+        });
+    });
+
+    closeButton.onclick = () => {
+        modal.style.display = 'none';
+    };
+
+    window.onclick = (event) => {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    };
+});
+</script>
+</body></html>
