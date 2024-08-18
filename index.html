@@ -1,10 +1,7 @@
 <html><head><base href="https://websim.io/optijuegos-clone/">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" sizes="192x192" href="https://i.ibb.co/6HTN9zK/image-3.png" type="image/x-icon">
-<link rel="shortcut icon" href="https://i.ibb.co/6HTN9zK/image-3.png" type="image/x-icon">
-<link rel="apple-touch-icon" href="https://i.ibb.co/6HTN9zK/image-3.png" type="image/x-icon">
-<title>RachezPrograms</title>
+<title>Programas</title>
 <style>
 body {
     font-family: Arial, sans-serif;
@@ -109,14 +106,14 @@ h1 {
     display: inline-block;
     padding: 10px 20px;
     margin: 10px;
-    background-color: #0b003b;
+    background-color: #4CAF50;
     color: white;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
 }
 .button:hover {
-    background-color: #190477;
+    background-color: #45a049;
 }
 
 .program-container::-webkit-scrollbar {
@@ -142,10 +139,38 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
 }
+
+/* Estilos para el buscador */
+.search-container {
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+#search-input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3a3a3a;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+#search-input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+#search-input::placeholder {
+    color: #999;
+}
 </style>
 </head>
 <body>
 <h1>Programas</h1>
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Buscar programas...">
+</div>
 <div class="program-container">
     <ul class="program-list">
         <li class="program-item" 
@@ -260,7 +285,6 @@ data-info="M3U8 Downloader es una herramienta que descarga y convierte videos en
 </div>
 <span class="info-icon">?</span>
 </li>
-        <!-- Add more program items here with similar data attributes -->
     </ul>
 </div>
 
@@ -281,6 +305,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const buttonContainer = document.getElementById('button-container');
     const closeButton = document.getElementsByClassName('close')[0];
     const programItems = document.querySelectorAll('.program-item');
+    const searchInput = document.getElementById('search-input');
+
+    function filterPrograms(searchTerm) {
+        programItems.forEach(item => {
+            const programName = item.querySelector('.program-name').textContent.toLowerCase();
+            if (programName.includes(searchTerm.toLowerCase())) {
+                item.style.display = 'flex';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
+
+    searchInput.addEventListener('input', (e) => {
+        filterPrograms(e.target.value);
+    });
 
     programItems.forEach(item => {
         const infoIcon = item.querySelector('.info-icon');
